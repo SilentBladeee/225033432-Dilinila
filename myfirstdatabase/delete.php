@@ -1,13 +1,15 @@
 <?php
 include 'db.php';
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $id = $_POST['id'];
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
 
+    // Delete user from database
     $sql = "DELETE FROM users WHERE id=$id";
 
     if ($conn->query($sql) === TRUE) {
         echo "User deleted successfully!";
+        header('Location: index.php'); // Redirect back to index.php after deletion
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
@@ -16,7 +18,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 $conn->close();
 ?>
 
-<form method="POST" action="delete.php">
-    User ID: <input type="number" name="id" required><br>
-    <input type="submit" value="Delete User">
-</form>

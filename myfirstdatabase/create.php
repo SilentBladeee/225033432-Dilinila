@@ -9,6 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($conn->query($sql) === TRUE) {
         echo "New user created successfully!";
+        header('Location: index.php'); // Redirect back to index.php after creation
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
@@ -16,9 +17,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 $conn->close();
 ?>
-
-<form method="POST" action="create.php">
-    Name: <input type="text" name="name" required><br>
-    Email: <input type="email" name="email" required><br>
-    <input type="submit" value="Create User">
-</form>
