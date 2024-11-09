@@ -8,7 +8,7 @@
         $phone = $_POST['phone'];
 
         if (!empty($name)&& !empty ($phone)){
-            $sql= "INSERT INTO contancts (name, phone) VALUES ('$name', '$phone')";
+            $sql= "INSERT INTO contacts (name, phone) VALUES ('$name', '$phone')";
 
             if ($conn->query($sql)=== TRUE){
                 echo "New contact added successfully!";
@@ -39,3 +39,4 @@
     <a href="index.php">Back to PhoneBook</a>
 </body>
 </html>
+

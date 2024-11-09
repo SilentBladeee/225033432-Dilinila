@@ -4,7 +4,7 @@
     $password ="";
     $dbname ="phonebook";
 
-    //Create Connection
+
 
     $conn = new mysqli($servername, $username, $password, $dbname);
 
