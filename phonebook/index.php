@@ -1,6 +1,6 @@
 <?php
-    include "db.php";
-    $sql = "Select * from contancts";
+    include 'db.php';
+    $sql = "SELECT * FROM contacts";
     $result = $conn->query($sql);
 ?>
 
@@ -9,7 +9,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phonebookt</title>
+    <title>Phonebook</title>
 </head>
 <body>
     <h2>Phonebook</h2>
@@ -21,16 +21,15 @@
             <th>Action</th>
         </tr>
         <?php
-        if ($result->num_rows >0){
-            while ($row = $result->fetch_assoc()){
-
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
                 echo "<tr>";
                 echo "<td>" . $row['name'] . "</td>";
                 echo "<td>" . $row['phone'] . "</td>";
-                echo "<td>Delete</td>";
+                echo "<td><a href='delete.php?id=" . $row['id'] . "'>Delete</a></td>";
+                echo "</tr>";
             }
-        }
-        else{
+        } else {
             echo "<tr><td colspan='3'>No Contacts</td></tr>";
         }
         ?>

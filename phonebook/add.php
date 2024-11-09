@@ -11,7 +11,6 @@
             if ($conn->query($sql) === TRUE) {
                 echo "New contact added successfully!";
             } else {
-                // Display the specific SQL error if insertion fails
                 echo "Failed to add new contact: " . $conn->error;
             }
         } else {
@@ -19,7 +18,6 @@
         }
     }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,8 +28,8 @@
 </head>
 <body>
     <h2>Add a New Contact</h2>
-    <form method = "post" action="add.php">
-        Name: <input type="text" name='name'><br><br>
+    <form method="post" action="add.php">
+        Name: <input type="text" name="name"><br><br>
         Phone: <input type="text" name="phone"><br><br>
         <input type="submit" value="Add Contact">
     </form>
