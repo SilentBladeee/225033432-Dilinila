@@ -1,16 +1,19 @@
 <?php
-    include 'db.php';
+include 'db.php';
 
-    if (isset($_GET['id'])) {
-        $id = $_GET['id'];
-        $sql = "DELETE FROM contacts WHERE id = $id";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $id = $_POST['id'];
 
-        if ($conn->query($sql) === TRUE) {
-            echo "Contact deleted successfully!";
-        } else {
-            echo "Failed to delete contact: " . $conn->error;
-        }
-    }
-    header("Location: index.php");
-    exit();
+    $sql = "DELETE FROM contacts WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([$id]);
+
+    echo "Contact deleted successfully!";
+}
 ?>
+
+<form method="POST" action="">
+    <input type="text" name="id" placeholder="Contact ID" required>
+    <button type="submit">Delete Contact</button>
+</form>
+
