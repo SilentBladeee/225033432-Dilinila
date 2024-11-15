@@ -16,4 +16,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <input type="text" name="id" placeholder="Contact ID" required>
     <button type="submit">Delete Contact</button>
 </form>
-

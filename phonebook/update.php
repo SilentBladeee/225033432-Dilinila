@@ -27,3 +27,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <input type="email" name="email" value="<?= $contact['email'] ?>">
     <button type="submit">Update Contact</button>
 </form>
+

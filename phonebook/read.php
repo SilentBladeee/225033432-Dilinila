@@ -11,3 +11,4 @@ foreach ($contacts as $contact) {
          " - Email: " . $contact['email'] . "<br>";
 }
 ?>
+

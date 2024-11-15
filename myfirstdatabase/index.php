@@ -15,7 +15,7 @@ $result = $conn->query($sql);
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f7f6;
+            background-color: #f4f4ff;
             margin: 0;
             padding: 0;
         }
@@ -23,7 +23,7 @@ $result = $conn->query($sql);
         h2 {
             text-align: center;
             margin-top: 20px;
-            color: #333;
+            color: #4B0082;
         }
 
         table {
@@ -42,12 +42,12 @@ $result = $conn->query($sql);
         }
 
         table th {
-            background-color: #4CAF50;
+            background-color: #8A2BE2;
             color: white;
         }
 
         table tr:hover {
-            background-color: #f1f1f1;
+            background-color: #f4e8ff;
         }
 
         form {
@@ -69,7 +69,7 @@ $result = $conn->query($sql);
         }
 
         form input[type="submit"] {
-            background-color: #4CAF50;
+            background-color: #8A2BE2;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -79,13 +79,21 @@ $result = $conn->query($sql);
         }
 
         form input[type="submit"]:hover {
-            background-color: #45a049;
+            background-color: #6A0DAD;
         }
 
         .container {
             max-width: 900px;
             margin: 0 auto;
             padding: 20px;
+        }
+
+        a {
+            color: #8A2BE2;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #6A0DAD;
         }
     </style>
 </head>
@@ -110,8 +118,8 @@ $result = $conn->query($sql);
             <td><?php echo $row['name']; ?></td>
             <td><?php echo $row['email']; ?></td>
             <td>
-                <a href="update.php?id=<?php echo $row['id']; ?>" style="color: #4CAF50; text-decoration: none;">Update</a> | 
-                <a href="delete.php?id=<?php echo $row['id']; ?>" style="color: #F44336; text-decoration: none;">Delete</a>
+                <a href="update.php?id=<?php echo $row['id']; ?>">Update</a> | 
+                <a href="delete.php?id=<?php echo $row['id']; ?>" style="color: #F44336;">Delete</a>
             </td>
         </tr>
         <?php } ?>
